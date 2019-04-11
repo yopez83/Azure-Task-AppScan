@@ -1,0 +1,30 @@
+{
+    "id": "f96392ca-6c0a-482c-b511-c1b88923ec62",
+    "name": "IBM.Security.AppScan",
+    "friendlyName": "IBM Security AppScan",
+    "description": "Provides a way to trigger applications security scans hosted on IBM Cloud",
+    "helpMarkDown": "",
+    "category": "Utility",
+    "author": "Yadel Lopez",
+    "version": {
+        "Major": 0,
+        "Minor": 1,
+        "Patch": 0
+    },
+    "instanceNameFormat": "$(friendlyName)",
+    "inputs": [
+        {
+            "name": "scanName",
+            "type": "string",
+            "label": "Scan Name",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "Name of the Scan defined on IBM Cloud Portfolio"
+        }
+    ],
+    "execution": {
+        "Node": {
+            "target": "index.js"
+        }
+    }
+}
