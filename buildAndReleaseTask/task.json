@@ -14,12 +14,28 @@
     "instanceNameFormat": "$(friendlyName)",
     "inputs": [
         {
-            "name": "scanName",
+            "name": "keyId",
             "type": "string",
-            "label": "Scan Name",
+            "label": "Key Id",
             "defaultValue": "",
             "required": true,
-            "helpMarkDown": "Name of the Scan defined on IBM Cloud Portfolio"
+            "helpMarkDown": "Key Id to access the REST APIs of IBM Application Security on Cloud"
+        },
+        {
+            "name": "keySecret",
+            "type": "string",
+            "label": "Key Secret",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "Key Secret to access the REST APIs of IBM Application Security on Cloud"
+        },
+        {
+            "name": "scanId",
+            "type": "string",
+            "label": "Scan Id",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "Scan Id for your application from the IBM Application Security on Cloud"
         }
     ],
     "execution": {

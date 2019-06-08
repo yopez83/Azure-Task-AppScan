@@ -2,12 +2,23 @@ import tl = require('azure-pipelines-task-lib/task');
 
 async function run() {
     try {
-        const scanName: string = tl.getInput('scanName', true);
-        if (scanName == 'bad') {
-            tl.setResult(tl.TaskResult.Failed, 'Bad input was given');
+        const keyId: string = tl.getInput('keyId', true);
+        if (keyId == '') {
+            tl.setResult(tl.TaskResult.Failed, 'Key Id cannot be empty');
             return;
         }
-        console.log('Initiating scanning for ', scanName);
+
+        const keySecret: string = tl.getInput('keySecret', true);
+        if (keySecret == '') {
+            tl.setResult(tl.TaskResult.Failed, 'Key Secret cannot be empty');
+            return;
+        }
+
+        const scanId: string = tl.getInput('scanId', true);
+        if (scanId == '') {
+            tl.setResult(tl.TaskResult.Failed, 'Scan Id cannot be empty');
+            return;
+        }
     }
     catch (err) {
         tl.setResult(tl.TaskResult.Failed, err.message);
